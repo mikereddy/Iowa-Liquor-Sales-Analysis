@@ -1,4 +1,5 @@
 # Iowa Liquor Sales Analysis
+![alt-text][https://i.imgur.com/EuEc8g5.png]
 
 ## Overview
 
