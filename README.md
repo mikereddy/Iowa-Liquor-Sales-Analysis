@@ -1,5 +1,6 @@
 # Iowa Liquor Sales Analysis
-![alt-text](https://i.imgur.com/EuEc8g5.png)
+![chart of iowa liquor sales](https://i.imgur.com/EuEc8g5.png)
+![dashboard of various liquor statistics of iowa](https://i.imgur.com/nvMwCqN.png)
 
 ## Overview
 
