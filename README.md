@@ -80,10 +80,6 @@ As for the most popular bottle sold, the data shows that the most popular bottle
 4. 375ml - 1,004,819 transactions
 5. 200ml - 630,235 transactions
 
-## Modeling
-
-## Managing 
-
 ## Visualizing 
 
 There are two main visualizations created within Excel that highlight our findings.
