@@ -80,6 +80,14 @@ As for the most popular bottle sold, the data shows that the most popular bottle
 4. 375ml - 1,004,819 transactions
 5. 200ml - 630,235 transactions
 
+The total sales corresponding to this discovery paints an even clearer picture:
+Bottle Size   Total Sales
+750ml         $53,002,264
+1000ml        $34,216,179
+1750ml        $33,216,847
+375ml          $6,204,906
+200ml          $2,393,216
+
 ## Visualizing 
 
 There are two main visualizations created within Excel that highlight our findings.
