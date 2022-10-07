@@ -10,7 +10,8 @@ This dataset was obtained from the Iowa Department of Commerce and includes, in 
 
 "This dataset contains the spirits purchase information of Iowa Class “E” liquor licenses by product and date of purchase from January 1, 2012 to current. The dataset can be used to analyze total spirits sales in Iowa of individual products at the store level."
 
-The final product can be viewed here: https://docs.google.com/spreadsheets/d/1eNYj3kV3PIXwyAwS86uoIcxIOKGwXbXu/edit?usp=sharing&ouid=108376608193069191851&rtpof=true&sd=true
+The final product can be viewed here:
+https://docs.google.com/spreadsheets/d/1eNYj3kV3PIXwyAwS86uoIcxIOKGwXbXu/edit?usp=sharing&ouid=108376608193069191851&rtpof=true&sd=true
 
 ## Goals
 
