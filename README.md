@@ -25,8 +25,6 @@ Through this discovery process, the goal is to gather common business KPIs, incl
   - Total Sales by Liquor Type
   - Total Sales by Store
   - Top Products by County
-  - Top Performing Stores
-  - Top Vendors/Distributors 
   - Best Seller by Volume (ml)
 
 ## Preparation
@@ -121,33 +119,13 @@ As there are several thousand stores, I'll break this down into the top 10 store
 ![Top10StoresByTotalSales](https://i.imgur.com/wdGxuvi.png)
 
 4. Top Products by County
-5. Top Performing Stores
-6. Top Vendors/Distributors 
+In this dashboard, I decided to make use of the slicer tool to be able to check for the top selling products by county, but also one step further to see how these numbers have changed over time. You could take a look at the sales trends and if the data showed, for example, that whisky was on a downward trend year on year but tequila numbers were skyrocketing, you might think consider having more tequila products in strategic spots if you're a store owner, or a new line of products to sell. 
+
+![TopProductsByCountySlicerDashboard](https://i.imgur.com/dLGSvbO.png)
+
 7. Best Seller by Volume (ml)
 
-## Trends
-
-When looking at the counties with the most sales data, Des Moines is, by far and away, the king (queen?) of number of transactions, and with Des Moines being the most populated county in Iowa, this comes as no surprise. 
-
-As for the most popular bottle sold, the data shows that the most popular bottle sizes are:
-
-```
-1. 750ml - 3,822,469 transactions 
-2. 1000ml - 2,373,791 transactions
-3. 1750ml - 2,011,095 transactions 
-4. 375ml - 1,004,819 transactions
-5. 200ml - 630,235 transactions
-```
-
-The total sales corresponding to this discovery paints an even clearer picture:
-```
-Bottle Size   Total Sales
-750ml         $53,002,264
-1000ml        $34,216,179
-1750ml        $33,216,847
-375ml          $6,204,906
-200ml          $2,393,216
-```
+![TopSellingBottlesByVolume](https://i.imgur.com/9KzPiQS.png)
 
 ## Visualizing 
 
@@ -161,11 +139,18 @@ The next visualization is of a dashboard highlighting an overview of total sales
 
 ![dashboard of various liquor statistics of Iowa](https://i.imgur.com/nvMwCqN.png)
 
-Key Takeaways:
-- Iowa loves whisky, with vodka as a close second. 
-- 750ml in the most popular seller in terms of bottle size.
-- December is the most popular month for purchasing alcohol - probably because there is only one way through the holiday season. 
+## SQL
 
-## Summary
+I am working in Microsoft SQL Server Management Studio (SSMS) for the following section and will use these queries to form the visualizations in Power BI and Tableau. 
 
-I hope you found this valuable and that it demonstrated how 'dirty data' can be cleaned and transformed into clean, usable data that can affect business decisions. Otherwise, I hope you learned something new about Excel and learned something about drinking trends and traditions in Iowa. 
+## Tableau
+
+I used Tableau public for this deep dive and the link to the dashboard can be found [here[(https://public.tableau.com/views/IowaLiquorSales_16620129866610/IowaLiquorSales?:language=en-US&:display_count=n&:origin=viz_share_link).
+
+
+## Power BI
+
+
+# Summary
+
+I hope you found this valuable and that it demonstrated how 'dirty data' can be cleaned and transformed into clean, usable data that can affect business decisions. Otherwise, I hope you learned something new about Excel and about drinking trends and traditions in Iowa. 
