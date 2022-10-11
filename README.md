@@ -104,13 +104,13 @@ When calculating the total sales amount for each year, the total sales amounts a
 Now that the data has been cleaned, I can begin analyzing the data. I'll create a series of pivot tables that will answer these questions.
 
 1. Weekly / Monthly / Quarterly / Yearly Sales Figures 
-
+-WIP-
 
 2. Total Sales by Liquor Type
 
 Over the course of the four-year period from 2012-2015, whisky accounted for just over 33% of all sales, with vodka in second accounting for nearly 24% of sales. In every single county, whisky is clearly the preferred drink, while the runner up switches between vodka or rum, depending on the county. 
 
-![Total Liquor Sales By Product Category](https://i.imgur.com/SBLS6o9.png))
+![Total Liquor Sales By Product Category](https://i.imgur.com/SBLS6o9.png)
 
 3. Total Sales by Store
 
@@ -149,7 +149,7 @@ I used Tableau public for this deep dive and the link to the dashboard can be fo
 
 
 ## Power BI
-
+-WIP-
 
 # Summary
 
