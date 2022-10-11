@@ -1,6 +1,5 @@
 # Iowa Liquor Sales Analysis
-![chart of Iowa liquor sales](https://i.imgur.com/EuEc8g5.png)
-![dashboard of various liquor statistics of Iowa](https://i.imgur.com/nvMwCqN.png)
+![Sales Analysis Dashboard](https://i.imgur.com/SkfQRev.png)
 
 ## Overview
 
@@ -10,12 +9,16 @@ This dataset was obtained from the Iowa Department of Commerce and includes, in 
 
 "This dataset contains the spirits purchase information of Iowa Class “E” liquor licenses by product and date of purchase from January 1, 2012 to current. The dataset can be used to analyze total spirits sales in Iowa of individual products at the store level."
 
-The final product can be viewed here:
-https://docs.google.com/spreadsheets/d/1eNYj3kV3PIXwyAwS86uoIcxIOKGwXbXu/edit?usp=sharing&ouid=108376608193069191851&rtpof=true&sd=true
-
 ## Goals
 
-The goal of this project is to demonstrate the complete process of analyzing data, from ingesting raw data, preparing the data for analysis, and visualizing the data in a dashboard in Microsoft Power BI and Tableau. 
+The goal of this project is to demonstrate the complete process of data analysis, from ingesting raw data, preparing the data for analysis, visualizing the data in a dashboard, and answering some assumed business metrics that may be requested when presented with sales transaction data. This is not intended to be the end-all-be-all method for how to use these tools as there are a variety of ways to get to the goal. This is just one of the many methods.
+
+Due to the private nature of data I have worked on in my professional career, I chose this dataset to give as close of a representation as possible with my experience working with:
+
+  - Microsoft Excel
+  - SQL
+  - Power BI
+  - Tableau
 
 Through this discovery process, the goal is to gather common business KPIs, including:
   - Weekly / Monthly / Quarterly / Yearly Sales Figures 
@@ -32,12 +35,52 @@ The data provided by the Iowa Department of Commerce includes the following fiel
 
 Once a copy of the original data is safely stored and backed up, we can begin the process of sorting through the information we have and comparing it to the answers we seek, and removing the information that is not vital to the goal. To this extent, the following columns can be removed: Invoice Number, Pack, State Bottle Cost, State Bottle Retail, Bottles Sold, and Volume Sold (Gallons). Despite being an American myself, it is with great displeasure that I remove the gallons column but keep the liter column - though we mostly measure drinks by liters anyways, so a round of applause for our own consistency between unit measurements.
 
-As this is just an example of the process of analyzing data, we'll assume the goals listed above were requested by business and aim to deliver those results and provided insights based on our findings. The information we seek will provided us with an overview of the sales in Iowa in terms of which stores are most profitable, which products sell the most, and sales trajectories throughout the year to deep dive and find any correlation in sales vs real world events. One such event would be looking at the data with an assumption of "sales will probably increase in February with the Super Bowl", and compare that to actual results. 
+As this is just an example of the process of analyzing data, I'll assume the goals listed above were requested by business and aim to deliver those results and provided insights based on my findings. The information I seek will provide us with an overview of the sales in Iowa in terms of which stores are most profitable, which products sell the most, and sales trajectories throughout the year to deep dive and find any correlation in sales vs real world events. One such event would be looking at the data with an assumption of "sales will probably increase in February with the Super Bowl", and compare that to actual results. 
 
-Now that we've determine which fields we want to keep, we need to clean up the data. Standardized formats are ideal for consistency and being able to quickly determine errors in the data. Since one of the goals will be the analyze sales via a heat map, I started by using Excel's =UPPER() function to define a standard format as later on in the visualization phase, Tableau and Power BI, to some extent, struggle with inconsistencies and will treat "Polk" and "POLK" as two different values. 
+Now that I've determined which fields I want to keep and the questions I am looking to answer, I need to clean up the data. In the next sections, I will explain my thought process for standardizing each column of data.
 
-After applying a consistent format, I created a pivot table to get a count of the unique values. A quick Google search shows that Iowa has 99 counties - with that in mind, I can quickly skim my list of values and if there are more than 99, I can quickly determine that something is wrong. Skimming through this list, several errors appear:
+### Date
+- I changed the data type to "short date" from "general" for consistency and data type accuracy.
 
+### Store Number
+- I changed the data type to "number" from "general" for consistency and data type accuracy.
+
+### Store Name, Address
+- I changed the data type to "text" from "general" for consistency and data type accuracy.
+- I used Excel's =UPPER() function to standardize the formatting. 
+- This field has longitude and latitude coordinates in the address, but Tableau will be unable to process them automatically as they are. Fortunately, in a few quick steps, we can separate these values into their own columns.
+    1.	Create three new columns
+    2.	Data > Text to Columns > Delimited > Check ‘Space’ > Next > Finish
+    3.	Control + H to replace the ‘(‘ and ‘)’ characters.
+    4.	Rename column headers to Store Name, Zip Code, Longitude, and Latitude. 
+
+### City
+- I changed the data type to "text" from "general" for consistency and data type accuracy.
+- I used Excel's =UPPER() function to standardize the formatting. 
+
+### Zip Code
+- I changed the data type to "special (zip code)" from "general" for consistency and data type accuracy.
+
+### Longitude, Latitude
+- I changed the data type to "special (zip code)" from "general" for consistency and data type accuracy.
+
+### County Number, Category, Vendor Number, Item Number, Bottle Volume (ml)
+- I changed the data type to "number" from "general" for consistency and data type accuracy.
+
+### Category
+- There are currently 105 different categories for products. After standardizing the data format and consolidating inconsistencies, for a higher level view, I created a new column called "Category Type", that can categorize the products at a higher-level, that can be expanded upon if desired. These categories are whisky, vodka, rum, liqueurs, tequila, schnapps, brandy, gin, cocktails, scotch, and others. I used the following code to parse the Category Name field for these 11 keywords and filled in my new column with the approrpiate category. 
+
+```
+=IF(ISNUMBER(SEARCH("Vodka", cell#)), "VODKA", "")
+```
+
+## Inconsistent Data
+
+Standardized formats are ideal for consistency and being able to quickly determine errors in the data. Tableau and Power BI, to some extent, struggle with inconsistencies and will treat "Polk" and "POLK" as two different values. 
+
+After applying a consistent format where possible, I created a pivot table to get a count of the unique values. A quick Google search shows that Iowa has 99 counties - with that in mind, I can quickly skim my list of values and if there are more than 99, I can quickly determine that something is wrong. Skimming through this list, several errors appear:
+
+```
 1. Buena Vist - 18 Transactions
 2. Buena Vista - 9824 Transactions
 3.	Cerro Gord – 7 Transaction
@@ -45,27 +88,18 @@ After applying a consistent format, I created a pivot table to get a count of th
 5.	Pottawatta – 111 Transactions
 6.	Pottawattamie – 34,747 Transactions
 [...]
+```
 
-Typos are a quick fix with a simple find and replace. Now that those replacements have been made, I can refresh the data in my pivot table, which leads me to a new issue: blank data. Of the 1,048,575 records found, 2,597 don’t have a County associated. Fortunately, these were largely big chunks that could easily be rectified, including 651 records in Belmond (Wright County), and 391 records in Guttenberg (Clayton County). For other stores, occasionally there is a location attached to the end of the store’s name, such as “Hy-Vee Food Store #1 / Ottumwa”. This store in particular appears in a lot of the incomplete column, so one way of automating this would be use a formula like the one below.
+Typos are a quick fix with a simple find and replace. Now that those replacements have been made, I can refresh the data in my pivot table, which leads me to a new issue: blank data. Of the 1,048,575 records found, 2,597 don’t have a County associated. Fortunately, these were largely big chunks that could easily be rectified, including 651 records in Belmond (Wright County), and 391 records in Guttenberg (Clayton County). For other stores, occasionally there is a location attached to the end of the store’s name, such as “Hy-Vee Food Store #1 / Ottumwa”. This store in particular appears in a lot of the incomplete column, so one way of automating this would be use a formula like the one below. Since we know that Ottumwa is part of Wapello County (thanks Google!), this formula will parse the Store Name field and if it finds a match of the string “Ottumwa”, then set the County field to “Wapello”, otherwise leave it blank. 
 
+```
 =IF(ISNUMBER(SEARCH("Ottumwa", cell#)), "WAPELLO", "")
-
-Since we know that Ottumwa is part of Wapello County (thanks Google!), this formula will parse the Store Name field and if it finds a match of the string “Ottumwa”, then set the County field to “Wapello”, otherwise leave it blank. 
+```
 
 With this formula and strategy, while time consuming, it will provide us with the most accurate version of the data. Some of the remaining inputs have no discernible county, city, address, and will end up filtered from the results. Regardless, having several hundred rows of “dirty data” in a data set that has over a million rows will be well within the expected confidence intervals when making decisions. 
 
-Store Location
-This field has longitude and latitude coordinates in the address, but Tableau will be unable to process them automatically as they are. Fortunately, in a few quick steps, we can separate these values into their own columns.
-1.	Create three new columns
-2.	Data > Text to Columns > Delimited > Check ‘Space’ > Next > Finish
-3.	Control + H to replace the ‘(‘ and ‘)’ characters.
-4.	Rename column headers.
-
-Date
-When calculating the total sales amount for each year, the total sales amounts are all within a similar range from 2012-2015. 2018 only has data from the first quarter, while 2017 only has data from the 4th quarter.  For consistency and tracking trends, we’ll only look at information from the four-year period where sales data is available throughout the entire year, then use forecasting to see how our model compares to the real data available.  
-
-Category Name
-There are currently 105 different categories for products. After standardizing the data format and consolidating inconsistencies, for a higher level view, I created a new column that can categorize the products at a higher-level, that can be expanded upon if desired. These categories are whisky, vodka, rum, liqueurs, tequila, schnapps, brandy, gin, cocktails, scotch, and others. 
+### Date
+When calculating the total sales amount for each year, the total sales amounts are all within a similar range from 2012-2015. 2018 only has data from the first quarter, while 2017 only has data from the 4th quarter. For consistency and tracking trends, we’ll only look at information from the four-year period where sales data is available throughout the entire year (2012-2015), then use forecasting to see how our model compares to the real data available. 
 
 ## Analysis
 
