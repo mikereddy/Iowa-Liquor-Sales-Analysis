@@ -103,27 +103,27 @@ When calculating the total sales amount for each year, the total sales amounts a
 
 Now that the data has been cleaned, I can begin analyzing the data. I'll create a series of pivot tables that will answer these questions.
 
-1. Weekly / Monthly / Quarterly / Yearly Sales Figures 
+### Weekly / Monthly / Quarterly / Yearly Sales Figures 
 -WIP-
 
-2. Total Sales by Liquor Type
+### Total Sales by Liquor Type
 
 Over the course of the four-year period from 2012-2015, whisky accounted for just over 33% of all sales, with vodka in second accounting for nearly 24% of sales. In every single county, whisky is clearly the preferred drink, while the runner up switches between vodka or rum, depending on the county. 
 
 ![Total Liquor Sales By Product Category](https://i.imgur.com/SBLS6o9.png)
 
-3. Total Sales by Store
+### Total Sales by Store
 
 As there are several thousand stores, I'll break this down into the top 10 stores in terms of total sales. 
 
 ![Top10StoresByTotalSales](https://i.imgur.com/wdGxuvi.png)
 
-4. Top Products by County
+### Top Products by County
 In this dashboard, I decided to make use of the slicer tool to be able to check for the top selling products by county, but also one step further to see how these numbers have changed over time. You could take a look at the sales trends and if the data showed, for example, that whisky was on a downward trend year on year but tequila numbers were skyrocketing, you might think consider having more tequila products in strategic spots if you're a store owner, or a new line of products to sell. 
 
 ![TopProductsByCountySlicerDashboard](https://i.imgur.com/dLGSvbO.png)
 
-7. Best Seller by Volume (ml)
+### Best Seller by Volume (ml)
 
 ![TopSellingBottlesByVolume](https://i.imgur.com/9KzPiQS.png)
 
