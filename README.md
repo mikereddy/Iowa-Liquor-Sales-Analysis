@@ -83,10 +83,10 @@ After applying a consistent format where possible, I created a pivot table to ge
 ```
 1. Buena Vist - 18 Transactions
 2. Buena Vista - 9824 Transactions
-3.	Cerro Gord – 7 Transaction
-4.	Cerro Gordo – 24208 Transactions
-5.	Pottawatta – 111 Transactions
-6.	Pottawattamie – 34,747 Transactions
+3. Cerro Gord – 7 Transaction
+4. Cerro Gordo – 24208 Transactions
+5. Pottawatta – 111 Transactions
+6. Pottawattamie – 34,747 Transactions
 [...]
 ```
 
@@ -103,25 +103,51 @@ When calculating the total sales amount for each year, the total sales amounts a
 
 ## Analysis
 
-Now that the data has been cleaned, we can begin analyzing the data. 
+Now that the data has been cleaned, I can begin analyzing the data. I'll create a series of pivot tables that will answer these questions.
+
+1. Weekly / Monthly / Quarterly / Yearly Sales Figures 
+
+
+2. Total Sales by Liquor Type
+
+Over the course of the four-year period from 2012-2015, whisky accounted for just over 33% of all sales, with vodka in second accounting for nearly 24% of sales. In every single county, whisky is clearly the preferred drink, while the runner up switches between vodka or rum, depending on the county. 
+
+![Total Liquor Sales By Product Category](https://i.imgur.com/KOt7MeM.png)
+
+3. Total Sales by Store
+
+As there are several thousand stores, I'll break this down into the top 10 stores in terms of total sales. 
+
+![Top10StoresByTotalSales](https://i.imgur.com/wdGxuvi.png)
+
+4. Top Products by County
+5. Top Performing Stores
+6. Top Vendors/Distributors 
+7. Best Seller by Volume (ml)
+
+## Trends
 
 When looking at the counties with the most sales data, Des Moines is, by far and away, the king (queen?) of number of transactions, and with Des Moines being the most populated county in Iowa, this comes as no surprise. 
 
 As for the most popular bottle sold, the data shows that the most popular bottle sizes are:
 
+```
 1. 750ml - 3,822,469 transactions 
 2. 1000ml - 2,373,791 transactions
 3. 1750ml - 2,011,095 transactions 
 4. 375ml - 1,004,819 transactions
 5. 200ml - 630,235 transactions
+```
 
 The total sales corresponding to this discovery paints an even clearer picture:
+```
 Bottle Size   Total Sales
 750ml         $53,002,264
 1000ml        $34,216,179
 1750ml        $33,216,847
 375ml          $6,204,906
 200ml          $2,393,216
+```
 
 ## Visualizing 
 
