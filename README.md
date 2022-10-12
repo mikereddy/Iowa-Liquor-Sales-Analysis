@@ -66,7 +66,7 @@ Now that I've determined which fields I want to keep and the questions I am look
 - I changed the data type to "number" from "general" for consistency and data type accuracy.
 
 ### Category
-- There are currently 105 different categories for products. After standardizing the data format and consolidating inconsistencies, for a higher level view, I created a new column called "Category Type", that can categorize the products at a higher-level, that can be expanded upon if desired. These categories are whisky, vodka, rum, liqueurs, tequila, schnapps, brandy, gin, cocktails, scotch, and others. I used the following code to parse the Category Name field for these 11 keywords and filled in my new column with the approrpiate category. 
+- There are currently 105 different categories for products. After standardizing the data format and consolidating inconsistencies, for a higher-level view, I created a new column called "Category Type", that can categorize the products at a higher-level, that can be expanded upon if desired. These categories are whisky, vodka, rum, liqueurs, tequila, schnapps, brandy, gin, cocktails, scotch, and others. I used the following code to parse the Category Name field for these 11 keywords and filled in my new column with the appropriate category. 
 
 ```
 =IF(ISNUMBER(SEARCH("Vodka", cell#)), "VODKA", "")
