@@ -154,7 +154,7 @@ I am working in Microsoft SQL Server Management Studio (SSMS) for the following 
 
 ## Tableau
 
-I used Tableau public for this deep dive and the link to the dashboard can be found [here](https://public.tableau.com/views/IowaLiquorSales_16620129866610/IowaLiquorSales?:language=en-US&:display_count=n&:origin=viz_share_link).
+I used Tableau public for this deep dive and the link to the dashboard can be found [here](https://public.tableau.com/app/profile/mike4013/viz/IowaLiquorSalesAnalysisDashboard/SalesDashboard)
 
 ![Sales Dashboard](https://i.imgur.com/1TikTFH.png) 
 
