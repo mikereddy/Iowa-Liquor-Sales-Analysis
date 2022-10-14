@@ -145,6 +145,12 @@ I am working in Microsoft SQL Server Management Studio (SSMS) for the following 
 
 ![What are the top 10 most popular bottle sizes in terms of total sales?](https://i.imgur.com/VsDUl5Q.png)
 
+![Min/Max/AVG Sales daily](https://i.imgur.com/lLQJvZu.png)
+
+![Top Performing Stores](https://i.imgur.com/x6oDmjt.png)
+
+![SalesIn2014](https://i.imgur.com/zHJY9c0.png)
+
 ## Tableau
 
 I used Tableau public for this deep dive and the link to the dashboard can be found [here[(https://public.tableau.com/views/IowaLiquorSales_16620129866610/IowaLiquorSales?:language=en-US&:display_count=n&:origin=viz_share_link).
