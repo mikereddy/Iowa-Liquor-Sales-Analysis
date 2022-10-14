@@ -143,7 +143,7 @@ The next visualization is of a dashboard highlighting an overview of total sales
 
 I am working in Microsoft SQL Server Management Studio (SSMS) for the following section and will use these queries to form the visualizations in Power BI.
 
-[What are the top 10 most popular bottle sizes in terms of total sales?](https://i.imgur.com/VsDUl5Q.png)
+![What are the top 10 most popular bottle sizes in terms of total sales?](https://i.imgur.com/VsDUl5Q.png)
 
 ## Tableau
 
